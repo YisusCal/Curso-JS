@@ -1,0 +1,23 @@
+const d = document;
+
+export default function searchFilter(input, selector) {
+  d.addEventListener("keyup", e => {
+    if (e.target.matches(input)) {
+      //console.log(e.key);
+      console.log(e.target.value);
+      if(e.key === "Escape") e.target.value = "";
+      
+      d.querySelectorAll(selector).forEach(el => el.    textContent.toLowerCase().includes(e.target.value) 
+        ? el.classList.remove("filter") 
+        : el.classList.add("filter")
+      );
+    }
+  })
+}
+
+
+/* ejercicio 13
+-Filtros de busqueda
+--Varias targetas
+Al escribir el numbre el buscador que las encuentre y las demas ;las elimine
+ */
